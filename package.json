@@ -1,0 +1,39 @@
+{
+  "name": "employeelistdemo",
+  "version": "1.0.0",
+  "description": "This emplyee list function demo for interview.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "a": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanhuihan/EmployeeListDemo.git"
+  },
+  "keywords": [
+    "employee",
+    "list"
+  ],
+  "author": "Jack Han",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanhuihan/EmployeeListDemo/issues"
+  },
+  "homepage": "https://github.com/wanhuihan/EmployeeListDemo#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "css-loader": "^1.0.0",
+    "eslint-loader": "^2.0.0",
+    "qunit": "^2.6.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "angularjs": "0.0.1"
+  }
+}

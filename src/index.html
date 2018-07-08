@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript" src="https://cdn.bootcss.com/angular.js/1.7.0/angular.min.js"></script>
+        <style type="text/css">
+            .employee_list  ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .employee_list h2, .employee_list .employee_bio dl, .employee_list .employee_bio dl dd {
+                margin: 0;
+                font-size: 12px;
+            }
+            .employee_list h2 {
+                font-size: 14px;
+            }
+            .employee_list .employee_bio dl dd strong {
+                padding-right: 10px;
+            }
+            .employee_list .employee_bio dl dd strong:after {
+                content: ":";
+            }
+            .employee_selected {
+                color: blue;
+            }
+            .employee_selected + .employee_bio {
+                padding-left: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="demo" >
+            <!--  employee list controller-->
+            <div class="employee_list" ng-controller="employeeList" >
+                <ul>
+                    <li ng-repeat="item in employeeList">
+                        <h2 ng-click="getEmployBio($index)" ng-class="{'employee_selected': currentEmployee == $index}">{{item.name}}</h2>
+                        <!--  -->
+                        <div class="employee_bio" ng-show="currentEmployee == $index" ng-click="EmployBioAlert($index)">
+                            <dl class="">
+                                <dd><strong>Gener</strong>{{item.bio.gender}}</dd>
+                                <dd><strong>Major</strong>{{item.bio.major}}</dd>
+                                <dd><strong>Age</strong>{{item.bio.age}}</dd>
+                                <dd><strong>Description</strong>{{item.bio.description}}</dd>
+                            </dl>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
