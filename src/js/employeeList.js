@@ -1,4 +1,5 @@
 
+/*global angular*/ 
 
 angular.module("demo", []).controller('employeeList', function($scope) {
     //
