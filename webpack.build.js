@@ -1,9 +1,12 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const uglify = require('uglifyjs-webpack-plugin');
 module.exports = {
 
-    mode: 'development',
-    entry: './src/js/employeeList.js',
+    mode: 'production',
+    entry: {
+        employeeList: './src/js/employeeList.js'
+    },
     output: {
         path: __dirname + '/dist',
         filename: '[name].js'
@@ -19,24 +22,14 @@ module.exports = {
         ]
     },
 
-    devServer: {
-        historyApiFallback: true,
-        inline:true,
-        contentBase: path.join(__dirname, "./dist/"),
-        compress: true,
-        port: 3000
-    },
-
     plugins: [
+        new uglify(),
         new htmlWebpackPlugin({
             minify: {
-                // 压缩html, 删除不必要的引号
                 removeAttributeQuotes: true,
             },
             hash: true,
-            // //
-            template: './src/index.html',
-            alwaysWriteToDisk: true,
+            template: './src/index.html'
         }),
     ]
 }

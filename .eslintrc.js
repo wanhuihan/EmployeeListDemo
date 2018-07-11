@@ -9,7 +9,7 @@ module.exports = {
       'no-console': 'off',
       "semi": 2,
       "no-alert": 'off',
-    //   "angular": 1
+      "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],
   },
     "env": {
         "browser": true,
@@ -20,6 +20,5 @@ module.exports = {
         "document": true,
         "localStorage": true,
         "window": true,
-        // "angular": true
     }
 };

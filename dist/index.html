@@ -4,6 +4,7 @@
         <meta charset=utf-8>
         <title></title>
         <script type=text/javascript src=https://cdn.bootcss.com/angular.js/1.7.0/angular.min.js></script>
+
         <style type=text/css>
             .employee_list  ul {
                 list-style: none;
@@ -16,6 +17,8 @@
             }
             .employee_list h2 {
                 font-size: 14px;
+                cursor: pointer;
+                padding-bottom: 10px;
             }
             .employee_list .employee_bio dl dd strong {
                 padding-right: 10px;
@@ -33,14 +36,16 @@
     </head>
     <body>
         <div ng-app=demo>
-            <!--  employee list controller-->
+            <!--  employee list component-->
             <div class=employee_list ng-controller=employeeList>
                 <ul>
                     <li ng-repeat="item in employeeList">
-                        <h2 ng-click=getEmployBio($index) ng-class="{'employee_selected': currentEmployee == $index}">{{item.name}}</h2>
+                        <h2 ng-click=getEmployBio(item.id) ng-class="{'employee_selected': currentEmployee == item.id}">{{item.name}}</h2>
                         <!--  -->
-                        <div class=employee_bio ng-show="currentEmployee == $index" ng-click=EmployBioAlert($index)>
+                        <div class=employee_bio ng-show="currentEmployee == item.id" ng-click=EmployBioAlert(item.id)>
                             <dl class="">
+                                <dd><strong>Id</strong>{{item.id}}</dd>
+                                <dd><strong>Name</strong>{{item.name}}</dd>
                                 <dd><strong>Gener</strong>{{item.bio.gender}}</dd>
                                 <dd><strong>Major</strong>{{item.bio.major}}</dd>
                                 <dd><strong>Age</strong>{{item.bio.age}}</dd>
@@ -50,6 +55,8 @@
                     </li>
                 </ul>
             </div>
+            <!--  -->
+            <test-a></test-a>
         </div>
-    <script type=text/javascript src=main.js?b0ac3ecaa99c30184ebb></script></body>
+    <script type=text/javascript src=employeeList.js?b3ed3594272d506ab07e></script></body>
 </html>
