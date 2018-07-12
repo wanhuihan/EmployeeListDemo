@@ -3,6 +3,8 @@
 angular.module("demo", []).controller('employeeList', function($scope) {
     //
     $scope.currentEmployee = null;
+    //
+    $scope.currentEmployeeData = null;
     // This is demo data for employee list
     $scope.employeeList = [
         {
@@ -49,13 +51,18 @@ angular.module("demo", []).controller('employeeList', function($scope) {
     // This Fun is for show or hide the employee description, it's by the subscript in the data array
     $scope.getEmployBio = function(id) {
         $scope.currentEmployee = $scope.currentEmployee == id ? null : id;
+        //
+        if ($scope.currentEmployee == null) {
+            $scope.currentEmployeeData = null;
+        }
+        // $scope.currentEmployeeData = $scope.currentEmployee == null ? {};
     };
     // This Fun is for alert the employee description when clcik the employee name
     $scope.EmployBioAlert = function(id) {
-        // console.log($scope.employeeList[index]);
         let currentEmployeeData = $scope.employeeList.filter(function(obj)  {
             return obj.id == id;
         });
-        alert(JSON.stringify(currentEmployeeData));
+        $scope.currentEmployeeData = currentEmployeeData[0];
+        // alert(JSON.stringify(currentEmployeeData));
     };
 });

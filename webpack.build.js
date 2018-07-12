@@ -2,7 +2,6 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const uglify = require('uglifyjs-webpack-plugin');
 module.exports = {
-
     mode: 'production',
     entry: {
         employeeList: './src/js/employeeList.js'
@@ -11,7 +10,6 @@ module.exports = {
         path: __dirname + '/dist',
         filename: '[name].js'
     },
-
     module: {
         rules: [
             {

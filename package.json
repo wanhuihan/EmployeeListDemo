@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start --config karma.config.js",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.build.js"
+    "build": "webpack --config webpack.build.js --production"
   },
   "repository": {
     "type": "git",
